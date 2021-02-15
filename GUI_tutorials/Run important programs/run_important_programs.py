@@ -33,6 +33,13 @@ def runApps():
     for app in apps:
         os.startfile(app)
 
+# Printing the earlier saved files in save.txt
+if os.path.isfile('save.txt'): #checking if the file exists
+    with open('save.txt', 'r') as tempfile:
+        tempApps = tempfile.read()
+        tempApps = tempApps.split(',')
+        apps     = [x for x in tempApps if x.strip()] #strip all the empty spaces
+
 # Adding a canvas
 canvas = tk.Canvas(root, height=700, width=700, bg="#263D42")
 canvas.pack()
@@ -41,7 +48,7 @@ canvas.pack()
 frame = tk.Frame(root, bg ="white")
 frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)   
 
-#Adding buttons
+# Adding buttons
 openFile = tk.Button(root, text="Open File", padx=10, 
                      pady=5, fg="white", bg="#263D42", command=addApp)  
 openFile.pack()
@@ -50,4 +57,17 @@ runApps = tk.Button(root, text="Run Apps", padx=10,
                      pady=5, fg="white", bg="#263D42", command=runApps)  
 runApps.pack()
 
+# Printing the saved apps
+for app in apps:
+    label = tk.Label(frame, text = app)
+    label.pack()
+
 root.mainloop()
+
+# Saving the list as text file when exitting
+with open('save.txt','w') as savefile:
+    for app in apps:
+        savefile.write(app + ',')
+        
+        
+        
