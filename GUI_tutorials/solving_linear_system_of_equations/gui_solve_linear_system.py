@@ -1,19 +1,36 @@
 # Creating a GUI from Python program
-# Run important programs
+# Solve system of equations
 # author: Mohammad Afzal Shadab
 # email: mashadab@utexas.edu
 # date: 14 February 2021
-# $ pip install tk
-# $ pip install TCL
 
-import tkinter as tk  #for creating the GUI
-from tkinter import filedialog, Text 
-import os             #allows to run the apps
+import sys
+import numpy as numpy
+import tkinter.messagebox as fmsgbox  #for creating the GUI
 
-# Initializing a root
-root = tk.Tk()  #holds the app like a body like HTML
-apps = []       #placeholder for all files that we are adding
+# Defining a solver class
+class solver: 
+    def __init__(self, top=None):
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 # Defining a function to add the apps to a list
 def addApp():
     #widget which attaches to everything in the frame
@@ -69,5 +86,4 @@ with open('save.txt','w') as savefile:
     for app in apps:
         savefile.write(app + ',')
         
-        
-        
+'''

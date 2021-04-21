@@ -1,1 +1,1 @@
-C:/Users/Owner/AppData/Local/slack/slack.exe,
+C:/Users/Owner/AppData/Local/slack/slack.exe,C:/Program Files/IrfanView/i_view64.exe,
