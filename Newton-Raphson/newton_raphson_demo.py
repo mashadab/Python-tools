@@ -6,6 +6,7 @@ email: mashadab@utexas.edu
 """
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
 #Trying to find root of the equation exp(x) = 2, correct answer is x=0.6931
 
 res = lambda x: np.exp(x) - 2.0 #Residual of the function
@@ -48,3 +49,7 @@ while True:
         print(f'Newton has converged in {i} iterations.') 
         break
         
+# (c) Using fsolve
+x0 = 100
+x   = fsolve(res, x0)
+print(f'fsolve answer: {x}.') 
